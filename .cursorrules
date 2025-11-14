@@ -1,0 +1,45 @@
+# Codebase Optimization Rules
+
+## React Performance Optimization
+- Use React.memo() for components that receive props and don't need to re-render frequently
+- Use useMemo() for expensive computations and object/array creations
+- Use useCallback() for functions passed as props to prevent unnecessary re-renders
+- Extract static data (arrays, objects) outside components or use useMemo
+- Use proper keys for list items (prefer IDs over indices)
+- Throttle or debounce scroll/resize event listeners
+- Lazy load heavy components with React.lazy() and Suspense
+
+## Code Quality
+- Keep components small and focused (single responsibility)
+- Extract reusable logic into custom hooks
+- Use const for data that doesn't change
+- Avoid inline object/array creation in JSX props
+- Prefer functional components with hooks
+- Use proper TypeScript types if applicable
+
+## Performance Best Practices
+- Minimize re-renders by memoizing components
+- Use React DevTools Profiler to identify performance bottlenecks
+- Optimize images (lazy loading, proper formats, sizes)
+- Code split routes and heavy components
+- Use production builds for performance testing
+
+## State Management
+- Keep state as local as possible
+- Use context sparingly (only for truly global state)
+- Consider state colocation (keep state close to where it's used)
+- Avoid prop drilling (use context or state management library if needed)
+
+## Event Handlers
+- Throttle scroll/resize listeners (use requestAnimationFrame or lodash throttle)
+- Clean up event listeners in useEffect cleanup
+- Use passive event listeners where possible
+- Debounce user input handlers
+
+## Rendering Optimization
+- Avoid creating functions/objects in render
+- Use React.memo with custom comparison function if needed
+- Split large components into smaller ones
+- Use React.Fragment instead of unnecessary divs
+- Optimize conditional rendering
+

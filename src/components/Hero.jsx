@@ -1,20 +1,43 @@
+import { memo } from 'react'
+import videoBg from '../assets/WhatsApp Video 2025-11-13 at 11.00.30.mp4'
+
 function Hero() {
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-white py-24 px-5 text-center">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-4xl sm:text-3xl font-bold leading-tight mb-5 text-gray-900">
-          Designed for Studios<br />Perfect for Homes
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source src={videoBg} type="video/mp4" />
+      </video>
+      
+      {/* Dark Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
+      
+      {/* Content */}
+      <div className="relative z-20 max-w-4xl mx-auto px-5 text-center mt-[102px]">
+        <h1 className="text-6xl md:text-5xl sm:text-4xl font-bold leading-tight mb-5 text-white">
+          BLACK FRIDAY SALE
         </h1>
-        <p className="text-xl text-gray-600 mb-8">
-          Improve your well-being by creating a Pilates space at home
+        <p className="text-3xl md:text-2xl mb-8 text-white">
+          UP TO 50% OFF
         </p>
-        <button className="bg-gray-900 text-white border-none py-4 px-10 text-base font-semibold cursor-pointer transition-all uppercase tracking-wider hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-lg">
-          Shop now
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button className="bg-transparent text-white border-2 border-white py-4 px-10 text-base font-semibold cursor-pointer transition-all uppercase tracking-wider hover:bg-white hover:text-gray-900">
+            AT-HOME REFORMERS
+          </button>
+          <button className="bg-transparent text-white border-2 border-white py-4 px-10 text-base font-semibold cursor-pointer transition-all uppercase tracking-wider hover:bg-white hover:text-gray-900">
+            STUDIO REFORMERS
+          </button>
+        </div>
       </div>
     </section>
   )
 }
 
-export default Hero
+export default memo(Hero)
 

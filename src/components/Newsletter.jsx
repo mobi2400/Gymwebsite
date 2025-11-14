@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 function Newsletter() {
   return (
     <section className="py-20 px-5 text-center bg-gray-50">
@@ -16,5 +18,5 @@ function Newsletter() {
   )
 }
 
-export default Newsletter
+export default memo(Newsletter)
 

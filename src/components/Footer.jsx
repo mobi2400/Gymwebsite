@@ -1,34 +1,44 @@
+import { memo, useMemo } from 'react'
+
+// Static data moved outside component
+const MENU_LINKS = [
+  { label: 'Privacy Policy', href: '#privacy' },
+  { label: 'Terms & Conditions', href: '#terms' },
+  { label: 'Return & Refund policy', href: '#returns' },
+  { label: 'Shipping Information', href: '#shipping' },
+  { label: 'Warranty', href: '#warranty' }
+]
+
+const HELP_LINKS = [
+  { label: 'Home', href: '#home' },
+  { label: 'Contact Us', href: '#contact' },
+  { label: 'About us', href: '#about' },
+  { label: 'Log in / Sign up', href: '#login' },
+  { label: 'Blog', href: '#blog' }
+]
+
+const SHOP_LINKS = [
+  { label: 'Foldable', href: '#foldable' },
+  { label: 'Studio', href: '#studio' },
+  { label: 'Shop all', href: '#shop-all' }
+]
+
+const FEATURES = [
+  { icon: '🚚', text: 'Free shipping' },
+  { icon: '👥', text: 'Community' },
+  { icon: '🇦🇺', text: 'Australian owned' },
+  { icon: '🔒', text: 'Secure payment' }
+]
+
+const PAYMENT_METHODS = ['American Express', 'Apple Pay', 'Mastercard', 'Visa']
+
 function Footer() {
-  const menuLinks = [
-    { label: 'Privacy Policy', href: '#privacy' },
-    { label: 'Terms & Conditions', href: '#terms' },
-    { label: 'Return & Refund policy', href: '#returns' },
-    { label: 'Shipping Information', href: '#shipping' },
-    { label: 'Warranty', href: '#warranty' }
-  ]
-
-  const helpLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Contact Us', href: '#contact' },
-    { label: 'About us', href: '#about' },
-    { label: 'Log in / Sign up', href: '#login' },
-    { label: 'Blog', href: '#blog' }
-  ]
-
-  const shopLinks = [
-    { label: 'Foldable', href: '#foldable' },
-    { label: 'Studio', href: '#studio' },
-    { label: 'Shop all', href: '#shop-all' }
-  ]
-
-  const features = [
-    { icon: '🚚', text: 'Free shipping' },
-    { icon: '👥', text: 'Community' },
-    { icon: '🇦🇺', text: 'Australian owned' },
-    { icon: '🔒', text: 'Secure payment' }
-  ]
-
-  const paymentMethods = ['American Express', 'Apple Pay', 'Mastercard', 'Visa']
+  // Memoize links to prevent recreation
+  const menuLinks = useMemo(() => MENU_LINKS, [])
+  const helpLinks = useMemo(() => HELP_LINKS, [])
+  const shopLinks = useMemo(() => SHOP_LINKS, [])
+  const features = useMemo(() => FEATURES, [])
+  const paymentMethods = useMemo(() => PAYMENT_METHODS, [])
 
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8 px-5">
@@ -117,5 +127,5 @@ function Footer() {
   )
 }
 
-export default Footer
+export default memo(Footer)
 

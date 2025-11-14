@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 function JourneySection() {
   return (
     <section className="py-20 px-5 text-center bg-white">
@@ -8,5 +10,5 @@ function JourneySection() {
   )
 }
 
-export default JourneySection
+export default memo(JourneySection)
 

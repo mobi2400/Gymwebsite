@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 function BestReformer() {
   return (
     <section className="bg-white py-24 px-5 text-center">
@@ -17,5 +19,5 @@ function BestReformer() {
   )
 }
 
-export default BestReformer
+export default memo(BestReformer)
 
