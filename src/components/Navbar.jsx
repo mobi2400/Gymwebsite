@@ -43,6 +43,8 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
+  // Force HMR update
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
@@ -84,7 +86,7 @@ function Navbar() {
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}
           >
-            FitBoutique
+            BFC
           </div>
           <ul
             className={`md:flex items-center gap-8 list-none ${
